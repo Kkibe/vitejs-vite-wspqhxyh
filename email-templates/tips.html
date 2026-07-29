@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today's Tips - PowerKing Tips</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .content {
+        padding: 30px;
+      }
+      .tips-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      .tips-table th {
+        background: #00ae58;
+        color: white;
+        padding: 12px;
+        text-align: left;
+      }
+      .tips-table td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      .tips-table tr:hover {
+        background: #f5f5f5;
+      }
+      .premium-badge {
+        background: #ffd700;
+        color: #333;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: bold;
+      }
+      .free-badge {
+        background: #ccc;
+        color: #333;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+      }
+      .result-won {
+        color: #00ae58;
+        font-weight: bold;
+      }
+      .result-lost {
+        color: #d32f2f;
+        font-weight: bold;
+      }
+      .result-pending {
+        color: #ff9800;
+        font-weight: bold;
+      }
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        margin: 10px 0;
+      }
+      .footer {
+        background: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+      .vip-upgrade {
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⚡ PowerKing Tips</div>
+      </div>
+      <div class="content">
+        <h2>⚽ Today's Predictions - {{date}}</h2>
+        <p>Hello {{username}},</p>
+        <p>
+          Here are today's best football predictions based on our expert
+          analysis.
+        </p>
+
+        <h3>🔥 Today's Top Picks:</h3>
+        <table class="tips-table">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th>Tip</th>
+              <th>Odds</th>
+              <th>Result</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each tips}}
+            <tr>
+              <td>
+                <strong>{{home}} vs {{away}}</strong><br /><small
+                  >{{time}}</small
+                >
+              </td>
+              <td>{{prediction}}</td>
+              <td>{{odds}}</td>
+              <td class="result-{{status}}">{{statusText}}</td>
+              <td>
+                {{#if premium}}<span class="premium-badge">VIP</span
+                >{{else}}<span class="free-badge">Free</span>{{/if}}
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+
+        <h3>📊 Performance Stats:</h3>
+        <ul>
+          <li>✅ Free Tips Success Rate: {{freeSuccessRate}}%</li>
+          <li>⭐ VIP Tips Success Rate: {{vipSuccessRate}}%</li>
+          <li>🏆 Best Tip of the Day: {{bestTip}}</li>
+        </ul>
+
+        {{#if hasVipTips}}
+        <div class="vip-upgrade">
+          <strong>🔓 Unlock VIP Tips!</strong><br />
+          Get access to all premium predictions with 85%+ accuracy.<br />
+          <a
+            href="{{upgradeLink}}"
+            class="btn"
+            style="background: #333; margin-top: 10px"
+            >Upgrade to VIP →</a
+          >
+        </div>
+        {{/if}}
+
+        <h3>💡 Pro Tips:</h3>
+        <ul>
+          <li>Always compare odds across multiple bookmakers</li>
+          <li>Bet responsibly - never chase losses</li>
+          <li>Follow our Telegram for live updates</li>
+        </ul>
+
+        <a href="{{tipsLink}}" class="btn">View All Tips →</a>
+
+        <p>Good luck with your bets!<br />The PowerKing Tips Team</p>
+      </div>
+      <div class="footer">
+        <p>© 2024 PowerKing Tips. All rights reserved.</p>
+        <p>
+          <a href="{{unsubscribeLink}}" style="color: #00ae58">Unsubscribe</a>
+          from daily tips
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

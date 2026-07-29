@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to PowerKing Tips</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .content {
+        padding: 30px;
+      }
+      .welcome-box {
+        background: linear-gradient(135deg, #e8f5e9, #c8e6d9);
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+      }
+      .feature-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        margin: 10px 0;
+      }
+      .footer {
+        background: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+      .verification-box {
+        background: #fff3e0;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⚡ PowerKing Tips</div>
+      </div>
+      <div class="content">
+        <h2>Welcome to PowerKing Tips! 🎉</h2>
+        <p>Hello {{username}},</p>
+        <p>
+          Thank you for joining PowerKing Tips! We're excited to help you make
+          winning predictions.
+        </p>
+
+        <div class="welcome-box">
+          <strong>🎁 Special Welcome Offer:</strong><br />
+          Get <strong>3 Days FREE VIP Access</strong> when you upgrade to any
+          plan!<br />
+          Use code: <strong>WELCOMEVIP</strong>
+        </div>
+
+        <div class="verification-box">
+          <strong>✅ Verify Your Email</strong><br />
+          Please verify your email address to get full access to all
+          features.<br />
+          <a href="{{verificationLink}}" class="btn">Verify Email Address</a>
+        </div>
+
+        <h3>✨ What You Get:</h3>
+        <ul class="feature-list">
+          <li>
+            ⭐ <strong>Daily Free Tips</strong> - Accurate predictions for major
+            leagues
+          </li>
+          <li>⭐ <strong>Expert Analysis</strong> - In-depth match previews</li>
+          <li>⭐ <strong>Live Scores</strong> - Real-time match updates</li>
+          <li>
+            ⭐ <strong>Betting Insights</strong> - Value bet recommendations
+          </li>
+          <li>
+            ⭐ <strong>Community Access</strong> - Join our Telegram/WhatsApp
+            groups
+          </li>
+        </ul>
+
+        <a href="{{dashboardLink}}" class="btn">Go to Dashboard</a>
+
+        <p>Start winning today!<br />The PowerKing Tips Team</p>
+      </div>
+      <div class="footer">
+        <p>© 2024 PowerKing Tips. All rights reserved.</p>
+        <p>
+          <a href="{{unsubscribeLink}}" style="color: #00ae58">Unsubscribe</a>
+          from marketing emails
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

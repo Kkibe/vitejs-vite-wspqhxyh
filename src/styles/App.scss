@@ -1,0 +1,60 @@
+@import './theme.scss';
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+
+  main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.5s ease-out;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: var(--grey);
+    font-size: 16px;
+  }
+}
+
+.error-message {
+  background: rgba(240, 79, 48, 0.1);
+  color: var(--even);
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  border-left: 3px solid var(--even);
+  margin: 10px 0;
+}
+
+.success-message {
+  background: rgba(0, 174, 88, 0.1);
+  color: var(--dark-blue);
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: center;
+  border-left: 3px solid var(--blue);
+  margin: 10px 0;
+}

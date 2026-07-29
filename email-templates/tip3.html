@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today's Tips - PowerKing Tips</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+    "
+  >
+    <!-- Main Container -->
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      style="
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <!-- Header -->
+      <tr>
+        <td
+          style="
+            background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+            padding: 30px 20px;
+            text-align: center;
+          "
+        >
+          <table
+            align="center"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+          >
+            <tr>
+              <td align="center">
+                <a
+                  href="https://powerking-tips.onrender.com"
+                  style="
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: #ffffff;
+                    text-decoration: none;
+                  "
+                >
+                  ⚡ PowerKing Tips
+                </a>
+              </td>
+            </tr>
+            {{#if is_premium}}
+            <tr>
+              <td align="center" style="padding-top: 15px">
+                <div
+                  style="
+                    background: rgba(255, 215, 0, 0.2);
+                    border: 1px solid #ffd700;
+                    border-radius: 8px;
+                    padding: 10px 15px;
+                    display: inline-block;
+                    color: #ffd700;
+                    font-weight: bold;
+                    font-size: 14px;
+                  "
+                >
+                  ⭐ PREMIUM MEMBER - Full Access ⭐
+                </div>
+              </td>
+            </tr>
+            {{/if}}
+          </table>
+        </td>
+      </tr>
+
+      <!-- Content - This is where the pre-built HTML from React is inserted -->
+      <tr>
+        <td style="padding: 0">{{{html_content}}}</td>
+      </tr>
+
+      <!-- Footer -->
+      <tr>
+        <td
+          style="
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+          "
+        >
+          <table
+            align="center"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="100%"
+          >
+            <tr>
+              <td align="center">
+                <p style="margin: 5px 0">
+                  © {{current_year}} PowerKing Tips. All rights reserved.
+                </p>
+                <p style="margin: 5px 0">
+                  <a
+                    href="{{unsubscribe_link}}"
+                    style="color: #00ae58; text-decoration: none"
+                    >Unsubscribe</a
+                  >
+                  from daily tips
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

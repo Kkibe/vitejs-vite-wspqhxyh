@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Features - PowerKing Tips</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .content {
+        padding: 30px;
+      }
+      .feature-card {
+        background: #f5f5f5;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid #00ae58;
+      }
+      .feature-icon {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        margin: 10px 0;
+      }
+      .footer {
+        background: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+      .version-badge {
+        background: #00ae58;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⚡ PowerKing Tips</div>
+      </div>
+      <div class="content">
+        <h2>New Features Available! 🚀</h2>
+        <p>Hello {{username}},</p>
+        <p>
+          We're constantly improving PowerKing Tips to help you win more. Check
+          out what's new!
+        </p>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Enhanced Analytics Dashboard</h3>
+          <p>
+            View detailed statistics, win rates, and performance metrics for all
+            your bets.
+          </p>
+          <span class="version-badge">NEW</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Real-Time Match Alerts</h3>
+          <p>
+            Get instant notifications for live matches, goal alerts, and result
+            updates.
+          </p>
+          <span class="version-badge">NEW</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3>Multiple Payment Options</h3>
+          <p>Now pay with M-Pesa, PayPal, Cryptocurrency, and Google Pay.</p>
+          <span class="version-badge">NEW</span>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile App Improvements</h3>
+          <p>
+            Faster loading, better navigation, and offline access to
+            predictions.
+          </p>
+          <span class="version-badge">UPDATED</span>
+        </div>
+
+        <h3>🎁 Special Offer for You:</h3>
+        <p>
+          Try any new feature and get <strong>20% off</strong> your next VIP
+          upgrade!
+        </p>
+        <p>Use code: <strong>NEWFEATURE20</strong></p>
+
+        <a href="{{dashboardLink}}" class="btn">Explore New Features</a>
+
+        <p>Your feedback helps us improve!<br />The PowerKing Tips Team</p>
+      </div>
+      <div class="footer">
+        <p>© 2024 PowerKing Tips. All rights reserved.</p>
+        <p>
+          <a href="{{unsubscribeLink}}" style="color: #00ae58">Unsubscribe</a>
+          from feature updates
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

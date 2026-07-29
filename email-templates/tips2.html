@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today's Tips - PowerKing Tips</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        padding: 30px 20px;
+        text-align: center;
+        position: relative;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .premium-banner {
+        background: rgba(255, 215, 0, 0.2);
+        border: 1px solid #ffd700;
+        border-radius: 8px;
+        padding: 10px 15px;
+        margin-top: 15px;
+        display: inline-block;
+        color: #ffd700;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .content {
+        padding: 30px;
+      }
+      .content h2 {
+        color: #00ae58;
+        margin-top: 0;
+      }
+      .content p {
+        color: #333;
+        line-height: 1.6;
+      }
+      .tips-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 14px;
+      }
+      .tips-table th {
+        background: #00ae58;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+      }
+      .tips-table td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+      }
+      .tips-table tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+      .tips-table tr:hover {
+        background: #f0f7f0;
+      }
+      .premium-badge {
+        background: #ffd700;
+        color: #333;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 10px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      .free-badge {
+        background: #e0e0e0;
+        color: #666;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 10px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      .match-time {
+        font-size: 11px;
+        color: #888;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+        background: #f5f5f5;
+        padding: 20px;
+        border-radius: 12px;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #00ae58;
+      }
+      .stat-label {
+        font-size: 12px;
+        color: #888;
+        margin-top: 4px;
+      }
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        color: white !important;
+        padding: 12px 30px;
+        text-decoration: none !important;
+        border-radius: 25px;
+        margin: 10px 5px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .btn-dark {
+        background: #333;
+      }
+      .vip-upgrade {
+        background: linear-gradient(135deg, #ffd700, #ffa500);
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        margin: 20px 0;
+      }
+      .vip-upgrade strong {
+        font-size: 18px;
+        color: #333;
+      }
+      .vip-upgrade p {
+        color: #555;
+      }
+      .vip-upgrade .btn {
+        background: #333;
+        margin-top: 10px;
+      }
+      .footer {
+        background: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+      .footer a {
+        color: #00ae58;
+        text-decoration: none;
+      }
+      .pro-tip-box {
+        background: #e8f5e9;
+        border-left: 4px solid #00ae58;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+      .pro-tip-box strong {
+        color: #00ae58;
+      }
+      .no-tips {
+        text-align: center;
+        padding: 30px;
+        color: #888;
+        background: #f9f9f9;
+        border-radius: 8px;
+      }
+      @media (max-width: 480px) {
+        .tips-table {
+          font-size: 12px;
+        }
+        .tips-table th,
+        .tips-table td {
+          padding: 8px 6px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+          padding: 15px;
+        }
+        .content {
+          padding: 20px;
+        }
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+          display: block;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="logo">⚡ PowerKing Tips</div>
+
+        {% if is_premium == 'true' %}
+        <div class="premium-banner">⭐ PREMIUM MEMBER - Full Access ⭐</div>
+        {% endif %}
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+        <h2>⚽ Today's Tips Are Live!</h2>
+        <p>Hello {{username}},</p>
+        <p>
+          Our expert analysts have posted today's betting tips for
+          <strong>{{date}}</strong>.
+        </p>
+
+        <!-- Stats Summary -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value">{{total_tips}}</div>
+            <div class="stat-label">🎯 Predictions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">{{today_matches}}</div>
+            <div class="stat-label">⚽ Matches</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">{{avg_odds}}</div>
+            <div class="stat-label">💰 Avg Odds</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">{{confidence_rate}}%</div>
+            <div class="stat-label">📈 Confidence</div>
+          </div>
+        </div>
+
+        <!-- Free Tips Section -->
+        {% if free_tips_json and free_tips_json != '' %}
+        <h3>🔥 Free Predictions</h3>
+        <table class="tips-table">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th>Tip</th>
+              <th>Odds</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set tips = free_tips_json|json_decode %} {% for tip in tips %}
+            <tr>
+              <td>
+                <strong>{{tip.home}} vs {{tip.away}}</strong>
+                <br />
+                <span class="match-time"
+                  >🏆 {{tip.league}} • ⏰ {{tip.time}}</span
+                >
+              </td>
+              <td>{{tip.pick}}</td>
+              <td><strong>{{tip.odd}}</strong></td>
+              <td><span class="free-badge">Free</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+
+        <!-- Premium Tips Section (Only visible to premium users) -->
+        {% if is_premium == 'true' and premium_tips_json and premium_tips_json
+        != '' %}
+        <h3>⭐ VIP Exclusive Predictions</h3>
+        <table class="tips-table">
+          <thead>
+            <tr>
+              <th>Match</th>
+              <th>Tip</th>
+              <th>Odds</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% set tips = premium_tips_json|json_decode %} {% for tip in tips %}
+            <tr>
+              <td>
+                <strong>{{tip.home}} vs {{tip.away}}</strong>
+                <br />
+                <span class="match-time"
+                  >🏆 {{tip.league}} • ⏰ {{tip.time}}</span
+                >
+              </td>
+              <td>{{tip.pick}}</td>
+              <td><strong>{{tip.odd}}</strong></td>
+              <td><span class="premium-badge">⭐ VIP</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% endif %}
+
+        <!-- Upgrade to VIP (For free users when VIP tips exist) -->
+        {% if is_premium != 'true' and has_vip_tips == 'true' %}
+        <div class="vip-upgrade">
+          <strong>💎 Unlock VIP Predictions</strong>
+          <p>
+            Get access to <strong>{{vip_tips_count}}</strong> premium tips with
+            higher odds and better returns.
+          </p>
+          <a href="{{upgrade_link}}" class="btn btn-dark"
+            >⭐ Upgrade to VIP →</a
+          >
+        </div>
+        {% endif %}
+
+        <!-- Pro Tip -->
+        <div class="pro-tip-box"><strong>💡 Pro Tip:</strong> {{pro_tip}}</div>
+
+        <!-- View All Tips Button -->
+        <div style="text-align: center; margin: 20px 0">
+          <a href="{{tips_link}}" class="btn">📊 View All Tips →</a>
+        </div>
+
+        <p style="text-align: center; color: #666; font-style: italic">
+          Best of luck with your bets!<br />
+          <strong>The PowerKing Tips Team 🏆</strong>
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>© {{current_year}} PowerKing Tips. All rights reserved.</p>
+        <p><a href="{{unsubscribe_link}}">Unsubscribe</a> from daily tips</p>
+      </div>
+    </div>
+  </body>
+</html>

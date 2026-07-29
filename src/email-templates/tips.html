@@ -1,0 +1,62 @@
+<!-- email-templates/tips.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Today's Tips - PowerKing Tips</title>
+    <style>
+      /* Your styles here */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⚡ PowerKing Tips</div>
+      </div>
+
+      <div class="content">
+        <h2>⚽ Today's Tips Are Live!</h2>
+        <p>Hello {{username}},</p>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-value">{{total_tips}}</div>
+            <div class="stat-label">🎯 Predictions</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">{{avg_odds}}</div>
+            <div class="stat-label">💰 Avg Odds</div>
+          </div>
+        </div>
+
+        <!-- Free Tips Section -->
+        {{free_tips_table}}
+
+        <!-- Premium Section (conditional) -->
+        <!-- PREMIUM_START -->
+        <h3>⭐ VIP Exclusive Predictions</h3>
+        {{premium_tips_table}}
+        <!-- PREMIUM_END -->
+
+        <!-- Free Section (conditional) -->
+        <!-- FREE_START -->
+        <div class="vip-upgrade">
+          <strong>💎 Unlock VIP Predictions</strong>
+          <p>Get access to {{vip_tips_count}} premium tips</p>
+          <a href="{{upgrade_link}}">⭐ Upgrade to VIP →</a>
+        </div>
+        <!-- FREE_END -->
+
+        <div class="pro-tip-box"><strong>💡 Pro Tip:</strong> {{pro_tip}}</div>
+
+        <a href="{{tips_link}}" class="btn">📊 View All Tips →</a>
+      </div>
+
+      <div class="footer">
+        <p>© {{current_year}} PowerKing Tips. All rights reserved.</p>
+        <p><a href="{{unsubscribe_link}}">Unsubscribe</a></p>
+      </div>
+    </div>
+  </body>
+</html>

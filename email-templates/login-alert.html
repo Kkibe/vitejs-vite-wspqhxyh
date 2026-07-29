@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Alert - PowerKing Tips</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .header {
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .content {
+        padding: 30px;
+      }
+      .alert-box {
+        background: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+      .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #00ae58 0%, #007a37 100%);
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 25px;
+        margin: 20px 0;
+      }
+      .footer {
+        background: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+      .info-text {
+        color: #666;
+        margin: 10px 0;
+      }
+      .security-note {
+        background: #e8f5e9;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">⚡ PowerKing Tips</div>
+      </div>
+      <div class="content">
+        <h2>New Login Detected 🔐</h2>
+        <p>Hello {{username}},</p>
+        <p>We noticed a new login to your PowerKing Tips account.</p>
+
+        <div class="alert-box">
+          <strong>📱 Login Details:</strong><br />
+          <span class="info-text">📍 Location: {{location}}</span><br />
+          <span class="info-text">🖥️ Device: {{device}}</span><br />
+          <span class="info-text">🌐 Browser: {{browser}}</span><br />
+          <span class="info-text">⏰ Time: {{time}}</span>
+        </div>
+
+        <p>If this was you, you can safely ignore this email.</p>
+        <p>If this wasn't you, please secure your account immediately:</p>
+
+        <div class="security-note">
+          <strong>🔒 Security Actions:</strong><br />
+          • Change your password immediately<br />
+          • Enable two-factor authentication<br />
+          • Contact support if you notice suspicious activity
+        </div>
+
+        <a href="{{resetPasswordLink}}" class="btn">Secure My Account</a>
+
+        <p>Stay safe,<br />The PowerKing Tips Team</p>
+      </div>
+      <div class="footer">
+        <p>© 2024 PowerKing Tips. All rights reserved.</p>
+        <p>
+          You received this email because you have a PowerKing Tips account.
+        </p>
+        <p>
+          <a href="{{unsubscribeLink}}" style="color: #00ae58">Unsubscribe</a>
+          from security alerts
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -721,7 +721,7 @@ export const emailService = {
       unsubscribeLink,
       currentYear,
     }) {
-      return `hello`/*`
+      return `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1086,7 +1086,7 @@ export const emailService = {
     </div>
   </body>
 </html>
-  `*/;
+  `;
     }
 
     // Then in your templateParams:

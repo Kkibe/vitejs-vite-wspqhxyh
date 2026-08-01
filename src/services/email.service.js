@@ -635,7 +635,7 @@ export const emailService = {
 </html>
 `, //htmlContent, // The complete HTML
       from_name: 'PowerKing Tips',
-      //reply_to: 'support@powerking-tips.com'
+      //reply_to: 'admin@crbloans.co.ke'
       reply_to: 'kkibetkkoir@gmail.com',
 
       // Tips data
@@ -721,7 +721,7 @@ export const emailService = {
       unsubscribeLink,
       currentYear,
     }) {
-      return `
+      return `hello`/*`
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -1086,7 +1086,7 @@ export const emailService = {
     </div>
   </body>
 </html>
-  `;
+  `*/;
     }
 
     // Then in your templateParams:
